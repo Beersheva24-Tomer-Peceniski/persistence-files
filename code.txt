@@ -1,0 +1,25 @@
+package telran.persistence;
+
+import java.io.IOException;
+import java.nio.file.FileVisitResult;
+import java.nio.file.FileVisitor; 
+import java.nio.file.Path;
+import java.nio.file.attribute.BasicFileAttributes;
+
+public class FileVisitorImpl implements FileVisitor<Path> {
+    private Path starPath;
+    private String symbol;
+
+    public FileVisitorImpl(Path startPath, String symbol) {
+        this.starPath = startPath;
+        this.symbol = symbol;
+    }
+
+
+
+
+
+    @Override
+    public FileVisitResult postVisitDirectory(Path file, IOException arg1) 
+	throws IOException {
+        return FileVisitResult.CONTINUE;
